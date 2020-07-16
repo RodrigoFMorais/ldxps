@@ -1,6 +1,6 @@
 const connection = require("../database/connection");
 const axios = require('axios')
-const urlbase = "https://ldxps.herokuapp.com/api/v1/"
+const urlbase = process.env.baseURL + "/api/v1/"
 
 
 exports.getHome = async (req, res) => {
