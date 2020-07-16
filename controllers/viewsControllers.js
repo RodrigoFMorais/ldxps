@@ -1,7 +1,6 @@
 const connection = require("../database/connection");
 const axios = require('axios')
-const urlbase = "/api/v1/"
-
+const urlbase = "https://ldxps.herokuapp.com/api/v1/"
 
 
 exports.getHome = async (req, res) => {
@@ -51,16 +50,10 @@ exports.getEditClient = async (req, res) => {
 
   const vendedores = await connection("VENDEDORES").select("*");
 
-  console.log(vendedores)
-
-  console.log(urlbase + "clientes/" + CDCL)
-
   const resultado = await axios({
     method: "GET",
     url: urlbase + "clientes/" + CDCL,
   });
-
-
 
   const cliente = resultado.data.CLIENTE;
 
