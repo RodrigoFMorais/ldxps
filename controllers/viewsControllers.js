@@ -47,7 +47,10 @@ exports.getEditSeller = async (req, res) => {
 
 exports.getEditClient = async (req, res) => {
   const CDCL = req.params.CDCL;
+
   const vendedores = await connection("VENDEDORES").select("*");
+
+  console.log(vendedores)
 
   const resultado = await axios({
     method: "GET",
