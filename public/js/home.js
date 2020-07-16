@@ -166,7 +166,7 @@ function editarVendodor() {
 function editarCliente() {
   const CDCL = document.getElementById('CDCL').value;
   if (!CDCL)
-    alert('Você precisa selecionar o vendedor!');
+    alert('Você precisa selecionar o cliente!');
   else
     window.location.href = '../editacliente/' + CDCL;
 }

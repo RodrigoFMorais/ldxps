@@ -3,6 +3,7 @@ const axios = require('axios')
 const urlbase = "/api/v1/"
 
 
+
 exports.getHome = async (req, res) => {
   const vendedores = await connection("VENDEDORES").select("*");
   const clientes = await connection("CLIENTES").select("*");
@@ -52,12 +53,14 @@ exports.getEditClient = async (req, res) => {
 
   console.log(vendedores)
 
+  console.log(urlbase + "clientes/" + CDCL)
+
   const resultado = await axios({
     method: "GET",
     url: urlbase + "clientes/" + CDCL,
   });
 
-  console.log(resultado)
+
 
   const cliente = resultado.data.CLIENTE;
 
