@@ -1,0 +1,21 @@
+{
+  "name": "ldxps",
+  "version": "1.0.0",
+  "description": "Controle de Vendedores e Clientes",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Rodrigo Ferreira de Morais",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.2",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.0",
+    "pug": "^3.0.0"
+  }
+}

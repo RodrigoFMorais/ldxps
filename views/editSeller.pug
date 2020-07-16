@@ -1,0 +1,27 @@
+extends base
+
+block home
+
+  h1 Atualizar dados vendedor
+  .main
+    form.form
+    .form__group
+      label.form__label(for='DSNOME') Nome do vendedor:
+      input#DSNOME.form__input(type='text', required value=vendedor.DSNOME)
+      input#CDVEND(type='hidden', value=vendedor.CDVEND)
+    .form__group
+      label.form__label(for='CDTAB') Código da tabela de preço padrão:
+      input#CDTAB.form__input(type='integer', required value=vendedor.CDTAB)
+    .form__group
+      label.form__label(for='DTNASC') Data de Nascimento:
+      input#DTNASC.form__input(type='date' value=vendedor.DTNASC)
+    .form__group
+      label.form__label(for='LCLIENTS') Lista de Clientes:
+      ol
+        each cliente in clientes
+          li.form__label Nome: #{cliente.DSNOME}
+
+    .form__group
+      a.btn.btn--green.btn--small(onClick="atualizaVendedor()") Confirmar
+      a.btn.btn--green.btn--small(onClick="deletaVendedor()") Excluir
+      a.btn.btn--green.btn--small(href="/cadastracliente") Criar cliente

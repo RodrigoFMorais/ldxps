@@ -1,0 +1,19 @@
+extends base
+
+block home
+
+  h1 Cadastrar novo vendedor
+  .main
+    form.form
+    .form__group
+      label.form__label(for='DSNOME') Nome do vendedor:
+      input#DSNOME.form__input(type='text', required)
+    .form__group
+      label.form__label(for='CDTAB') Código da tabela de preço padrão: 
+      input#CDTAB.form__input(type='integer', required)
+    .form__group
+      label.form__label(for='DTNASC') Data de Nascimento:
+      input#DTNASC.form__input(type='date')
+    .form__group
+      a.btn.btn--green.btn--small(onClick="cadastrarVendedor()") Confirmar
+      a.btn.btn--green.btn--small(href="/cadastracliente") Criar cliente

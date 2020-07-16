@@ -1,0 +1,28 @@
+extends base
+
+block home
+
+  h1 Atualizar cliente
+  .main
+    form.form
+    .form__group
+      label.form__label(for='DSNOME') Nome do Cliente:
+      input#DSNOME.form__input(type='text', required value=cliente.DSNOME)
+      input#CDCL(type='hidden', value=cliente.CDCL)
+    .form__group
+      label.form__label(for='IDTIPO') Tipo de Pessoa:
+      select#IDTIPO.form__input(type='text' value=cliente.IDTIPO)
+        option(value="PF") PF
+        option(value="PF") PJ
+    .form__group
+      label.form__label(for='CDVEND') Vendedor:
+      select#CDVEND.form__input(type='text' value=cliente.CDVEND)
+          each vendedor in vendedores
+            option(value=vendedor.CDVEND) #{vendedor.DSNOME}
+    .form__group
+      label.form__label(for='DSLIN') Limite de Crédito:
+      input#DSLIN.form__input(type='float' value=cliente.DSLIN)
+    .form__group
+      a.btn.btn--green.btn--small(onClick="atualizaCliente()") Confirmar
+      a.btn.btn--green.btn--small(onClick="deletaCliente()") Excluir
+      a.btn.btn--green.btn--small(href="/cadastravendedor") Criar vendedor 

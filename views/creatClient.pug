@@ -1,0 +1,26 @@
+extends base
+
+block home
+
+  h1 Cadastrar novo cliente
+  .main
+    form.form
+    .form__group
+      label.form__label(for='DSNOME') Nome do Cliente:
+      input#DSNOME.form__input(type='text', required)
+    .form__group
+      label.form__label(for='IDTIPO') Tipo de Pessoa:
+      select#IDTIPO.form__input(type='text')
+        option(value="PF") PF
+        option(value="PF") PJ
+    .form__group
+      label.form__label(for='CDVEND') Vendedor:
+      select#CDVEND.form__input(type='text')
+          each vendedor in vendedores
+            option(value=vendedor.CDVEND) #{vendedor.DSNOME}
+    .form__group
+      label.form__label(for='DSLIN') Limite de Crédito:
+      input#DSLIN.form__input(type='float')
+    .form__group
+      a.btn.btn--green.btn--small(onClick="cadastrarCliente()") Confirmar
+      a.btn.btn--green.btn--small(href="/cadastravendedor") Criar vendedor

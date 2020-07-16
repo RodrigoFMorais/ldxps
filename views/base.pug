@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+    title LDXPS
+
+
+  body
+    h1 SISTEMA LDXPS
+    block home
+      .main
+        span.form__label Vendedor: 
+        select#CDVEND.form__input(name="CDVEND" onChange="selectClients(this)")
+          option(value="") Todos
+          each vendedor in vendedores
+            option(value="vendedor/"+vendedor.CDVEND) #{vendedor.DSNOME}
+
+        p
+        span.form__label Cliente: 
+        select#CDCL.form__input(name="CDCL") 
+          each cliente in clientes
+            option(value=cliente.CDCL) #{cliente.DSNOME}
+
+        p
+        a.btn.btn--green.btn--small(onClick="editarVendodor()") Editar vendedor
+        p
+        a.btn.btn--green.btn--small(onClick="editarCliente()") Editar cliente
+        p
+        a.btn.btn--green.btn--small(href="/cadastravendedor") Criar vendedor
+        p
+        a.btn.btn--green.btn--small(href="/cadastracliente") Criar cliente 
+    
+    script(src='/js/home.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
