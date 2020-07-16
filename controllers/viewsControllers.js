@@ -57,6 +57,8 @@ exports.getEditClient = async (req, res) => {
     url: urlbase + "clientes/" + CDCL,
   });
 
+  console.log(resultado)
+
   const cliente = resultado.data.CLIENTE;
 
   res.status(200).render("editClient", {
